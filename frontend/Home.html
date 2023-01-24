@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Design.css">
+    <link rel="stylesheet" href="design.css">
     <title>Home</title>
 </head>
+
 <body>
-    <h1>Train</h1>
-    
-    <script src="Home.js"></script>
+    <div id="container">
+        <div id="header">
+            <h1><a href="/tickethack/frontend/home.html">Tickethack</a></h1>
+            <div id="header-buttons">
+                <h2><a href="/tickethack/frontend/cart.html">Cart</h2></a>
+                <h2><a href="/tickethack/frontend/bookings.html">Bookings</h2></a>
+            </div>
+        </div>
+        <div id="content">
+            <p id="firstslogan">Explore the world effortlessly by train!</p>
+            <p id="secondslogan">Compare, book and enjoy cheap prices for train tickets: your journey starts on
+                Tickethack</p>
+            <div id="content-cards">
+                <div id="reservation" class="cards">
+                    <div class="cards-destinations-input">
+                        <input type="text" name="Departure" placeholder="Departure">
+                        <input type="text" name="Arrival" placeholder="Arrival">
+                    </div>
+                    <input type="date">
+                    <button type="submit" id="searchbutton">Search</button>
+                </div>
+                <div id="result" class="cards">
+                    <div id="initialresult">
+                        <img id="imageresult" src="/tickethack/frontend/images/train.png" />
+                        <hr>
+                        <p id="textresult">It's time to book your future trip.</p>
+                    </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="home.js"></script>
 </body>
+
 </html>
