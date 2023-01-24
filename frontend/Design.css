@@ -92,7 +92,8 @@ a {
 input {
     background-color: rgb(241, 240, 240);
     border-color: rgb(241, 240, 240);
-
+    height: 24px;
+    border-radius: 3px;
 }
 
 button {
@@ -101,10 +102,23 @@ button {
     text-align: center;
     border-radius: 3px;
     border-color: teal;
+    height: 34px;
 }
 
 #result {
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#initialresult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 60%;
 }
 
 #imageresult {
@@ -113,9 +127,8 @@ button {
 
 hr {
     width: 80%;
-    color: teal;
-    size: 10;
-
+    border-top: 2px solid teal;
+    size: 5;
 }
 
 #textresult {
@@ -128,7 +141,21 @@ hr {
     border-radius: 3px;
 }
 
+@media (max-width: 900px) { 
+    #header {
+        flex-direction: column;
+    }
 
+    #content-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #reservation, #result {
+        margin: 0;
+        margin-bottom: 12px;
+    }
+}
 
 /*CONTENT CART PAGE*/
 
