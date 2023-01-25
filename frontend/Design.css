@@ -195,7 +195,7 @@ hr {
     display: flex;
 }
 
-#contentnocart {
+#contentnocart, #contentbookings {
     background-color: white;
     font-size: 18px;
     text-align: center;
@@ -207,6 +207,13 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
+}
+
+#contentbookings {
+    height: fit-content;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 
@@ -268,3 +275,28 @@ hr {
 
 
 /*CONTENT BOOKINGS PAGE*/
+
+#enjoy {
+    color: teal;
+    text-align: center;
+    font-size: 15px;
+}
+
+#hr2 {
+    width: 40%;
+    border-top: 1px solid black;
+    size: 2;
+}
+
+#finalbookings {
+    background-color:rgb(241, 240, 240);
+    width: 80%;
+    border-radius: 5px;
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
+
+#finalbookings > p:not(:last-child) {
+    margin-right: 22px;
+}
