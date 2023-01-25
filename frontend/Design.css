@@ -121,7 +121,7 @@ button {
     height: 60%;
 }
 
-#imageresult {
+.imageresult {
     height: 100px;
 }
 
@@ -131,7 +131,7 @@ hr {
     size: 5;
 }
 
-#textresult {
+.textresult {
     color: black;
     text-align: center;
 }
@@ -139,6 +139,8 @@ hr {
 #trainresult {
     background-color: rgb(241, 240, 240);
     border-radius: 3px;
+    max-width: 90%;
+    overflow-y: scroll;
 }
 
 @media (max-width: 900px) { 
