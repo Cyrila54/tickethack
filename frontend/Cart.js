@@ -1,0 +1,1 @@
+// A l'entree du fichier html recuperer tous les cart en BDD si besoin ?
