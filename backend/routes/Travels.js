@@ -1,19 +1,23 @@
 var express = require("express");
 var router = express.Router();
-const mongoose = require("mongoose");
-const moment = require("moment");
 const Trip = require("../models/trips");
 
-router.get("/", (req, res) => {
-  let date = req.body.date;
-  date = Date.parse(date); // transforme la string reçue en date
+router.post("/find", (req, res) => {
+  let newDate = Date.parse(req.body.date);
+  let year = new Date(newDate).getFullYear();
+  let month = new Date(newDate).getMonth() + 1;
+  let day = new Date(newDate).getDate();
+// ${year}-${month}-${day + 1}
+
   Trip.find({
     departure: req.body.departure,
     arrival: req.body.arrival,
-    //date: { $gte: new Date("2023-01-24").toISOString(), $lt: new Date("2023-01-24").toISOString() },
-    date: { $gte: new Date("2023-01-24").toISOString() },
+    date: {
+      $gte: new Date(`${req.body.date}`).toISOString(),
+      $lt: new Date(`${year}-${month}-${day + 1}`).toISOString(),
+    },
   }).then((data) => {
-    console.log(data);
+    res.json({ result: data });
   });
 });
 

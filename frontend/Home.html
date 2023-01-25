@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="uikit.css">
     <title>Home</title>
 </head>
 
@@ -25,10 +26,10 @@
             <div id="content-cards">
                 <div id="reservation" class="cards">
                     <div class="cards-destinations-input">
-                        <input type="text" name="Departure" placeholder="Departure">
-                        <input type="text" name="Arrival" placeholder="Arrival">
+                        <input type="text" name="Departure" id="Departure" placeholder="Departure">
+                        <input type="text" name="Arrival" id="Arrival" placeholder="Arrival">
                     </div>
-                    <input type="date">
+                    <input type="date" id="Date">
                     <button type="submit" id="searchbutton">Search</button>
                 </div>
                 <div id="result" class="cards">
@@ -44,6 +45,7 @@
         </div>
     </div>
     <script src="home.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
