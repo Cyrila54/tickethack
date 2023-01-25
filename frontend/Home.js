@@ -15,7 +15,7 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
     .then((data) => {
       console.log(data.result);
       if (data.result.length == 0) {
-        console.log("zero");
+        
         document.querySelector("#result").innerHTML = `
         <div id="noresult">
             <img class="imageresult" src="/tickethack/frontend/images/notfound.png" />
@@ -24,10 +24,8 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
         </div>`;
       } else if (data.result.length > 0) {
         
-
         for (const element of data.result) {
           let newDate = Date.parse(element.date);
-
           let hours = new Date(newDate).getHours();
           let minutes = new Date(newDate).getMinutes();
           if (hours < 10) {

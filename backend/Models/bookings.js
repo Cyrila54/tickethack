@@ -5,9 +5,9 @@ const tripSchema = mongoose.Schema({
     arrival:String,
     date: String,
     price:Number,
+    ispaid:Boolean,
 
 })
 
 const Booking = mongoose.model('bookings', tripSchema);
-
 module.exports=Booking;
