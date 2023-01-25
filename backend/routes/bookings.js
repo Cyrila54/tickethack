@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
 router.delete("/del/:id", (req, res) => {
   Booking.deleteOne({_id:req.params.id}).then
   ((data)=>{
-    res.json({ newResult:data})
+    res.json({newResult:data})
     /*
     EXPECTED:
     {
@@ -76,6 +76,10 @@ router.get("/find", (req, res) => {
 });
 
 
-
+router.get("/find/bookings", (req, res) => {
+  Booking.find({ispaid: true}).then(data=>{
+    res.json({resultFind:data})
+  })
+})
 
 module.exports = router;

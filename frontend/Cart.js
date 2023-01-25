@@ -10,3 +10,6 @@ function displayBookings(){
     })
 
 }
+
+fetch("http://localhost:3000/travels/find/cart")
+fetch("http://localhost:3000/travels/find/false")
