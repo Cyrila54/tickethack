@@ -14,13 +14,8 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data.result);
-<<<<<<< HEAD
-      if (data.result.length == 0) {
-        
-=======
       if (data.result.length === 0) {
         console.log("zero");
->>>>>>> 35bcd5f1bb7104e9296165d016dc7731e7573945
         document.querySelector("#result").innerHTML = `
         <div id="noresult">
             <img class="imageresult" src="/tickethack/frontend/images/notfound.png" />
@@ -29,10 +24,7 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
         </div>`;
       } else if (data.result.length > 0) {
         
-<<<<<<< HEAD
-=======
         document.querySelector("#result").innerHTML = `<div id="trainresult"></div>`;
->>>>>>> 35bcd5f1bb7104e9296165d016dc7731e7573945
         for (const element of data.result) {
           let newDate = Date.parse(element.date);
           let hours = new Date(newDate).getHours();
