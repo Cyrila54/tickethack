@@ -75,7 +75,20 @@ router.get("/find", (req, res) => {
  */
 });
 
+router.get("/purchase/:id", (req, res) => {
+  Booking.find({_id:req.params.id}).then (data=>{
+    res.json({resultPurchase:data})
+  })
 
+});
+
+
+router.put('/update/:id', (req,res)=>{
+  Booking.updateOne({_id:req.params.id},{ispaid:true})
+  .then (data=>{
+    res.json({resultUpdate:data})
+  })
+})
 
 
 module.exports = router;

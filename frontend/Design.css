@@ -188,25 +188,27 @@ hr {
 /*CONTENT CART PAGE*/
 
 #content2 {
-    padding: 0 150px;
+    
     grid-row-start : 2;
     grid-row-end : 3;
     background-color:rgb(236, 241, 239);
     display: flex;
+    
 }
 
 #contentnocart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: white;
     font-size: 18px;
     text-align: center;
-    height: 20%;
-    width: 70%;
+    width: 70vw;
     font-weight: 545;
     border-radius: 8px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    overflow: scroll;
 }
 
 
@@ -244,10 +246,10 @@ hr {
 
 .bookContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #f5eeee;
-    width: 70vw;
+    width: 60vw;
     padding: 15px;
     border-radius: 8px;
     font-size: 15px;
@@ -262,9 +264,26 @@ hr {
     padding: 2px 5px;
     color: white;
     border-radius: 5px;
-    padding: 5px 10px;
     margin-left: 5px;
+    margin-right: 50px;
 }
 
 
 /*CONTENT BOOKINGS PAGE*/
+
+#footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00153c;
+    width: 100%;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+
+}
+
+#total{
+    color: white;
+    padding-left: 50px;
+}
+
