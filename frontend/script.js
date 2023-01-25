@@ -25,7 +25,7 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
           let minutes = new Date(newDate).getMinutes();
           if (hours < 10) {
             hours = "0" + hours;
-          }
+          } 
           if (minutes < 10) {
             minutes = "0" + minutes;
           }
