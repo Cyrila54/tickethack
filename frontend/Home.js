@@ -6,15 +6,15 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      departure: document.querySelector("#departure").value,
-      arrival: document.querySelector("#arrival").value,
-      date: document.querySelector("#datePicker").value,
+      departure: document.querySelector("#departure").value.trim(),
+      arrival: document.querySelector("#arrival").value.trim(),
+      date: document.querySelector("#datePicker").value.trim(),
     }),
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data.result);
-      if (data.result.length == 0) {
+      if (data.result.length === 0) {
         console.log("zero");
         document.querySelector("#result").innerHTML = `
         <div id="noresult">
@@ -24,7 +24,7 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
         </div>`;
       } else if (data.result.length > 0) {
         
-
+        document.querySelector("#result").innerHTML = `<div id="trainresult"></div>`;
         for (const element of data.result) {
           let newDate = Date.parse(element.date);
 
@@ -37,12 +37,11 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
             minutes = "0" + minutes;
           }
           let formattedTime = hours + ":" + minutes;
-
-          document.querySelector("#result").innerHTML += `
+          document.querySelector("#trainresult").innerHTML += `
               <div class="train">
         <div class="trajet">
           <span><span id="depart">${element.departure}</span> > <span id="arrivee">${element.arrival}</span><span id="formatDate"> ${formattedTime}</span> <span id="price">${element.price}</span>€</span>
-          <button class="bookbutton">Book</button>
+          <button class="bookbutton"><a href="/tickethack/frontend/cart.html">Book</button><a>
         </div>
       </div>
               `;

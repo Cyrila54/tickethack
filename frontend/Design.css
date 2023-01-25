@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #container {
@@ -137,10 +138,27 @@ hr {
 }
 
 #trainresult {
-    background-color: rgb(241, 240, 240);
     border-radius: 3px;
-    max-width: 90%;
     overflow-y: scroll;
+}
+
+.train{
+    display: flex;
+    background-color: #f5eeee;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+.bookbutton{
+    background-color: #489e88;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
 }
 
 @media (max-width: 900px) { 
@@ -161,4 +179,58 @@ hr {
 
 /*CONTENT CART PAGE*/
 
+#content2 {
+    padding: 0 150px;
+    grid-row-start : 2;
+    grid-row-end : 3;
+    background-color:rgb(236, 241, 239);
+    display: flex;
+}
+
+#contentnocart {
+    background-color: white;
+    font-size: 18px;
+    text-align: center;
+    height: 20%;
+    width: 70%;
+    font-weight: 545;
+    border-radius: 8px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.delete{
+    background-color: #489e88;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 1vw;
+    height: 2vh;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.delete:hover{
+    background-color: white;
+    color: #489e88;
+    border: 1px solid #489e88;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 1vw;
+    height: 2vh;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+}  
 /*CONTENT BOOKINGS PAGE*/
