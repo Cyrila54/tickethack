@@ -1,11 +1,11 @@
 fetch(`http://localhost:3000/bookings/find`)
   .then((response) => response.json())
   .then((data) => {
-    document.querySelector("#contentnocart > p").remove();
-    document.querySelector("#contentnocart > p").textContent = "My Cart";
+    document.querySelector("#container_cart > p").remove();
+    document.querySelector("#container_cart > p").textContent = "My Cart";
     let total = 0;
     for (const element of data.resultFind) {
-      document.querySelector("#contentnocart").innerHTML += `
+      document.querySelector("#container_cart").innerHTML += `
 <div class="bookContainer">
 <div class="travel">${element.departure} > ${element.arrival}</div>
 <div class="hours">${element.date}</div>
@@ -17,7 +17,7 @@ fetch(`http://localhost:3000/bookings/find`)
       total += element.price;
     }
 
-    document.querySelector("#contentnocart").innerHTML += `
+    document.querySelector("#container_cart").innerHTML += `
 <div id="footer_container">
 <div id="total"><span>Total : ${total}€</span></div>
 <a href="Bookings.html"><button class="purchase">Purchase</button>

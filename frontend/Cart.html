@@ -5,22 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design.css">
-    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">      <link rel="stylesheet" href="design.css">
+    <script src="Cart.js" defer></script>
+    <title>cart</title>
 </head>
 
 <body>
     <div id="container">
         <div id="header">
-            <h1><a href="/tickethack/frontend/home.html">Tickethack</a></h1>
+            <div id="imgAndLogo">
+            <img src="images/locomotive-96.png" alt="" height="60px">
+                <h1 id="TextLogo"><a href="/tickethack/frontend/home.html">Tickethack</a></h1>
+            </div>
             <div id="header-buttons">
-                <h2><a href="/tickethack/frontend/cart.html">Cart</h2></a>
-                <h2><a href="/tickethack/frontend/bookings.html">Bookings</h2></a>
+                <div id="partOne">
+                <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" width="25px" alt="">
+                <h2 class="h2" ><a href="/tickethack/frontend/cart.html">Cart</h2></a>
+            </div>
+            <div id="partTwo">
+                <img src="images/receipt_long_FILL0_wght400_GRAD0_opsz48.png"  width="25px" alt="">
+                <h2 class="h2" id="bookingsbutton"><a href="/tickethack/frontend/bookings.html">Bookings</h2></a>
+            </div>
             </div>
         </div>
 
-        <div id="content2">
-            <div id="contentnocart">
+        <div id="body_Cart">
+            <div id="container_cart">
                 <p>No tickets in your cart.</p>
                 <p>What not plan a trip?</p>
 
@@ -29,7 +40,7 @@
         </div>
     </div>
     
-    <script src="Cart.js"></script>
+    
 </body>
 
 </html>

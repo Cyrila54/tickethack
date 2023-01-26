@@ -80,7 +80,6 @@ router.get("/purchase/:id", (req, res) => {
     res.json({resultPurchase:data})
   })
 
-<<<<<<< HEAD
 });
 
 
@@ -91,12 +90,10 @@ router.put('/update/:id', (req,res)=>{
   })
 })
 
-=======
 router.get("/find/bookings", (req, res) => {
   Booking.find({ispaid: true}).then(data=>{
     res.json({resultFind:data})
   })
 })
->>>>>>> 8d42818ba315b666cbb5e8b1388bda132dbb3fb0
 
 module.exports = router;

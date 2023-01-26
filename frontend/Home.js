@@ -38,31 +38,29 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
           let formattedTime = hours + ":" + minutes;
           document.querySelector("#trainresult").innerHTML += `
               <div class="train">
-        <div class="trajet">
-          <span><span id="depart">${element.departure}</span> > <span id="arrivee">${element.arrival}</span><span id="formatDate"> ${formattedTime}</span> <span id="price">${element.price}</span>€</span>
-          <button class="bookbutton"><a href="/tickethack/frontend/cart.html">Book</button><a>
-        </div>
-      </div>
+ <div class="trajet">
+
+
+<div class="travel_home"><span id='depart'>${element.departure}</span> > <span id='arrivee'>${element.arrival}</span></div>
+<div class="hours_home">${formattedTime}</div>
+<div class="price_home"><span id='price'>${element.price}</span>€</div>
+<button class="bookbutton"><a href="/tickethack/frontend/Cart.html">Book</button><a>
               `;
         }
       }
       /* AJOUT A 'BOOKINGS' LE CHOIX SELECTIONNE */
 
-      for (
-        let i = 0;
-        i < document.querySelectorAll(".bookbutton").length;
-        i++
-      ) {
-        document
-          .querySelectorAll(".bookbutton")
-          [i].addEventListener("click", () => {
+      for (let i = 0;i < document.querySelectorAll(".bookbutton").length;i++) 
+      { 
+        console.log('hello world');
+        document.querySelectorAll(".trajet")[i].addEventListener("click", () => {
             fetch("http://localhost:3000/bookings", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
                 departure: document.querySelectorAll("#depart")[i].textContent,
                 arrival: document.querySelectorAll("#arrivee")[i].textContent,
-                date: document.querySelectorAll("#formatDate")[i].textContent,
+                date: document.querySelectorAll(".hours_home")[i].textContent,
                 price: document.querySelectorAll("#price")[i].textContent,
               }),
             })
@@ -70,7 +68,9 @@ document.querySelector("#searchbutton").addEventListener("click", () => {
               .then((data) => {
                 console.log(data.Booking);
                 console.log(data);
+                console.log('hello world 2');
               });
+              
           });
       }
     });

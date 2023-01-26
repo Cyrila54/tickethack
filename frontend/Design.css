@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     height: 100vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -23,7 +24,37 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px;
-    color: teal;
+   
+}
+
+#partOne, #partTwo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgAndLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imgAndLogo img{
+  transform: scaleX(-1);
+}
+
+#TextLogo{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 900;
+    color: #489e88;
+    margin-left: 20px;
+}
+
+.h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 0 10px;
 }
 
 a {
@@ -38,19 +69,16 @@ a {
     color: black;
 }
 
-#header-buttons h2 {
-    margin: 0 10px;
-}
 
 /*CONTENT HOME PAGE*/
 
 #content {
-    padding: 0 150px;
     grid-row-start : 2;
     grid-row-end : 3;
     background-image : url(/tickethack/frontend/images/background.jpg);
     background-repeat:no-repeat;
     background-position: center center; 
+
 }
 
 #firstslogan {
@@ -70,39 +98,59 @@ a {
     justify-content: space-around;
 }
 
+#datePicker{
+    margin: 0;
+    width: 90%;
+    
+}
+
+#reservation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 .cards {
-    width: 250px;
-    height: 360px;
-    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     background-color: white;
     border-radius: 12px;
+    width: 20vw;
+    height: 45vh;
+    padding: 24px;
+    
 }
 
-#reservation {
-    margin-right: 10px;
-}
 
 
-.cards-destinations-input input {
+#searchbutton{
+    border-radius: 5px;
+    border: none;
     width: 100%;
+
 }
+
 
 input {
     background-color: rgb(241, 240, 240);
     border-color: rgb(241, 240, 240);
-    height: 24px;
-    border-radius: 3px;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    margin: 2px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 button {
     color: white;
-    background-color: teal;
+    background-color: #489e88;
     text-align: center;
     border-radius: 3px;
-    border-color: teal;
+    border-color: #489e88;
     height: 34px;
 }
 
@@ -128,7 +176,7 @@ button {
 
 hr {
     width: 80%;
-    border-top: 2px solid teal;
+    border-top: 2px solid #489e88;
     size: 5;
 }
 
@@ -147,10 +195,31 @@ hr {
     background-color: #f5eeee;
     padding: 15px;
     border-radius: 8px;
-    font-size: 11px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
+    width: 17vw;
 }
+
+.cards-destinations-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+
+.trajet{
+    display: flex;
+    align-items: center;
+}
+
+.travel_home, .hours_home, .price_home{
+    margin: 0 5px;
+}
+
+
 
 .bookbutton{
     background-color: #489e88;
@@ -179,27 +248,45 @@ hr {
         align-items: center;
     }
 
-    #reservation, #result {
-        margin: 0;
-        margin-bottom: 12px;
-    }
 }
 
 /*CONTENT CART PAGE*/
 
-#content2 {
-    
+#body_Cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-row-start : 2;
     grid-row-end : 3;
     background-color:rgb(236, 241, 239);
+}
+
+#body_booking {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start : 2;
+    grid-row-end : 3;
+    background-color:rgb(236, 241, 239);
+}
+
+#contentnocart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 18px;
+    width: 70vw;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: auto;
     
 }
 
-#contentnocart {
+#container_cart {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     background-color: white;
     font-size: 18px;
@@ -208,16 +295,18 @@ hr {
     font-weight: 545;
     border-radius: 8px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     
 }
 
+
 #contentbookings {
-    height: fit-content;
-    max-height: 500px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(255, 255, 255);
+
 }
 
 
@@ -286,8 +375,8 @@ hr {
     align-items: center;
     background-color: #00153c;
     width: 100%;
-    padding: 20px;
     border-radius: 0 0 8px 8px;
+    padding: 20px 0;
 
 }
 
@@ -297,7 +386,7 @@ hr {
 }
 
 #enjoy {
-    color: teal;
+    color: #489e88;
     text-align: center;
     font-size: 15px;
 }
@@ -309,14 +398,26 @@ hr {
 }
 
 #finalbookings {
-    background-color:rgb(241, 240, 240);
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
     border-radius: 5px;
     align-items: center;
-    margin: auto;
-    display: flex;
+
 }
 
 #finalbookings > p:not(:last-child) {
     margin-right: 22px;
+}
+.booking_cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5eeee;
+    width: 60vw;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
